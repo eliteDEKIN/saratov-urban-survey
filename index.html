@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Городская среда — Саратов</title>
+  <link rel="stylesheet" href="vendor/tailwind.css" />
+  <link rel="stylesheet" href="vendor/manrope.css" />
+  <link rel="stylesheet" href="design-overrides.css" />
+</head>
+<body class="bg-[#0a0a0a] text-white font-sans antialiased selection:bg-white selection:text-black">
+  <div id="particles-js"></div>
+  <div id="screen-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+  <style>
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #0a0a0a;
+    }
+    body {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+  <style>
+    #screen-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(200px);
+      opacity: 0.5;
+      animation: orb-drift 10s ease-in-out infinite alternate;
+    }
+    .glow-orb-1 {
+      top: -10%;
+      left: -10%;
+      width: 800px;
+      height: 800px;
+      background: rgba(255,255,255,0.06);
+    }
+    .glow-orb-2 {
+      bottom: -10%;
+      right: -10%;
+      width: 900px;
+      height: 900px;
+      background: rgba(255,255,255,0.04);
+      animation-delay: 2s;
+    }
+    .glow-orb-3 {
+      top: 40%;
+      left: 40%;
+      width: 700px;
+      height: 700px;
+      background: rgba(255,255,255,0.03);
+      animation-delay: 4s;
+    }
+    @keyframes orb-drift {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(60px, -40px) scale(1.05); }
+    }
+  </style>
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/70 backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
+      <a class="flex items-center gap-3" href="#top"><span class="grid h-10 w-10 place-items-center rounded-full bg-white text-xl font-extrabold text-black">С</span><span class="text-[11px] uppercase leading-tight tracking-[.18em] text-white/70">Городская<br><b class="text-sm tracking-[.08em] text-white">среда</b></span></a>
+      <nav class="hidden items-center gap-8 text-sm text-white/60 md:flex"><a class="transition hover:text-white" href="#about">О платформе</a><a class="transition hover:text-white" href="#survey">Опрос</a><a class="transition hover:text-white" href="#analytics">Аналитика</a><a class="transition hover:text-white" href="#methodology">Методология</a></nav>
+      <button class="pill-button hidden bg-white px-5 py-3 text-xs font-bold text-black transition hover:bg-white/80 sm:block flex items-center gap-2 justify-center" data-scroll="#survey">Оценить город <span class="text-base">→</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative mx-auto min-h-0 max-w-7xl px-5 pb-16 pt-36 md:px-8 md:pb-20 md:pt-44 reveal">
+      <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
+        <div class="reveal"><div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[10px] uppercase tracking-[.2em] text-white/60"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Исследование городской среды · 2026</div><h1 class="max-w-4xl text-6xl font-medium leading-[.93] tracking-[-.07em] text-white sm:text-7xl md:text-8xl">Сделаем Саратов<br><span class="text-white/45">удобнее вместе</span></h1><p class="mt-8 max-w-xl text-base leading-7 text-white/55">Платформа для сбора и анализа мнений жителей о качестве городской инфраструктуры. Ваш голос помогает увидеть город таким, какой он есть.</p><div class="mt-9 flex flex-wrap items-center gap-4"><button class="pill-button bg-white px-6 py-4 text-sm font-bold text-black transition hover:scale-[1.03] flex items-center gap-2 justify-center" data-scroll="#survey">Пройти опрос <span class="text-lg">→</span></button><button class="rounded-full border border-white/20 px-6 py-4 text-sm text-white/75 transition hover:border-white hover:text-white flex items-center gap-2 justify-center" data-scroll="#analytics">Смотреть результаты</button></div>
+        </div>
+        <div class="reveal delay-2 relative lg:pb-2"><div class="image-frame group relative h-[420px] overflow-hidden rounded-[2rem] border border-white/15 bg-white/5 md:h-[500px]"><img class="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-105" src="saratov-hero.jpg" alt="Панорама Саратова"><div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div><div class="absolute bottom-7 left-7"><p class="text-[10px] uppercase tracking-[.3em] text-white/55">Саратов · 51°32′N 46°00′E</p><p class="mt-2 text-2xl font-medium tracking-tight">Город на Волге</p></div><div class="absolute right-6 top-6 rounded-full border border-white/20 bg-black/30 px-3 py-2 text-[10px] text-white/70 backdrop-blur-md">01 / 03</div><div class="absolute bottom-6 right-6 hidden rounded-2xl border border-white/15 bg-black/40 p-4 backdrop-blur-xl sm:block"><p class="text-2xl font-semibold leading-none">4,1<span class="text-xs text-white/45"> / 5</span></p><p class="mt-1.5 text-[10px] uppercase tracking-[.16em] text-white/50">демо-индекс</p></div></div></div>
+      </div>
+      <div class="mt-12 grid max-w-2xl grid-cols-2 gap-6 border-t border-white/10 pt-6 sm:grid-cols-2"><div><strong id="respondents" class="text-2xl font-semibold tracking-tight">0</strong><span class="mt-1 block text-xs text-white/40">ответов в этом браузере</span></div><div><strong class="text-2xl font-semibold tracking-tight">6</strong><span class="mt-1 block text-xs text-white/40">направлений</span></div></div>
+    </section>
+
+    <section id="about" class="border-t border-white/10 py-24 md:py-36 reveal"><div class="mx-auto max-w-7xl px-5 md:px-8"><div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><p class="mb-5 text-[10px] uppercase tracking-[.25em] text-white/40">О платформе</p><h2 class="max-w-2xl text-4xl font-medium tracking-[-.05em] md:text-6xl">Что мы <span class="text-white/40">исследуем</span></h2></div><p class="max-w-sm text-sm leading-6 text-white/45">Оценка основана на реальном опыте жителей Саратова и помогает определить приоритеты развития городской инфраструктуры.</p></div><div class="grid gap-3 md:grid-cols-3"><article class="number-card reveal relative min-h-[260px] rounded-3xl bg-[#111111] p-7"><span class="absolute right-7 top-6 text-xs text-white/25">01</span><span class="block text-white/60"><svg class="mb-12" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0m12 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M4 17H2V6a1 1 0 0 1 1-1h14a5 7 0 0 1 5 7v5h-2m-4 0H8"/><path d="m16 5l1.5 7H22M2 10h15M7 5v5m5-5v5"/></svg></span><h3 class="text-xl font-medium">Транспорт</h3><p class="mt-3 max-w-xs text-sm leading-6 text-white/45">Общественный транспорт, маршруты и остановки</p></article><article class="number-card reveal delay-1 relative min-h-[260px] rounded-3xl bg-white p-7 text-black"><span class="absolute right-7 top-6 text-xs text-black/30">02</span><span class="block text-black/60"><svg class="mb-12" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19L8 5m8 0l4 14M12 8V6m0 7v-2m0 7v-2"/></svg></span><h3 class="text-xl font-medium">Дороги</h3><p class="mt-3 max-w-xs text-sm leading-6 text-black/55">Состояние дорожного покрытия и тротуаров</p></article><article class="number-card reveal delay-2 relative min-h-[260px] rounded-3xl bg-[#111111] p-7"><span class="absolute right-7 top-6 text-xs text-white/25">03</span><span class="block text-white/60"><svg class="mb-12" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 5l3 3l-2 1l4 4l-3 1l4 4h-9m2 3v-3m-7-5l-2-2m2 1l2-2M8 21V8m-2.176 8a3 3 0 0 1-2.743-3.69a3 3 0 0 1 .304-4.833A3 3 0 0 1 8 3.77a3 3 0 0 1 4.614 3.707a3 3 0 0 1 .305 4.833A3 3 0 0 1 10 16.005H6z"/></svg></span><h3 class="text-xl font-medium">Благоустройство</h3><p class="mt-3 max-w-xs text-sm leading-6 text-white/45">Парки, дворы, набережные и общественные пространства</p></article></div><div class="mt-3 grid gap-3 md:grid-cols-3"><article class="number-card reveal relative min-h-[210px] rounded-3xl bg-[#111111] p-7 md:col-span-2"><span class="absolute right-7 top-6 text-xs text-white/25">04</span><span class="block text-white/60"><svg class="mb-8" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.46 20.846A12 12 0 0 1 3.5 6A12 12 0 0 0 12 3a12 12 0 0 0 8.5 3a12 12 0 0 1-.09 7.06M15 19l2 2l4-4"/></svg></span><h3 class="text-xl font-medium">Безопасность</h3><p class="mt-3 max-w-xs text-sm leading-6 text-white/45">Освещение улиц и ощущение безопасности</p></article><div class="image-frame reveal overflow-hidden rounded-3xl"><img class="h-full min-h-[210px] w-full object-cover grayscale transition duration-700 hover:scale-105 hover:grayscale-0" src="saratov-detail.jpg" alt="Городская архитектура Саратова"></div></div></div></section>
+
+    <section id="survey" class="border-t border-white/10 py-24 md:py-36"><div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-[.7fr_1.3fr]"><div class="lg:sticky lg:top-28 lg:h-fit"><p class="mb-5 text-[10px] uppercase tracking-[.25em] text-white/40">Ваше мнение</p><h2 class="text-5xl font-medium tracking-[-.06em] md:text-6xl">Оцените<br><span class="text-white/40">Саратов</span></h2><p class="mt-6 max-w-sm text-sm leading-6 text-white/45">Опрос займёт около 2 минут. Поставьте оценку от 1 до 5 по каждому направлению.</p><div class="mt-14 max-w-xs"><div class="mb-3 flex justify-between text-xs text-white/45"><span>Прогресс опроса</span><b id="progressText" class="text-white">0 из 6</b></div><div class="h-1 overflow-hidden rounded-full bg-white/10"><span id="progressBar" class="block h-full w-0 rounded-full bg-white transition-all"></span></div></div></div><form id="surveyForm" class="rounded-3xl border border-white/10 bg-[#111111] p-6 md:p-10"><div id="questions"></div><div class="grid gap-4 border-t border-white/10 pt-7 sm:grid-cols-2"><fieldset class="flex flex-col text-[10px] uppercase tracking-[.16em] text-white/40"><legend class="mb-3 h-4">Ваш пол?</legend><input id="gender" type="hidden"><div class="gender-options"><button type="button" class="gender-option" data-gender="Мужской">Мужской</button><button type="button" class="gender-option" data-gender="Женский">Женский</button></div></fieldset><label class="flex flex-col text-[10px] uppercase tracking-[.16em] text-white/40"><span class="mb-3 h-4">Возраст</span><input id="age" type="number" min="14" max="100" inputmode="numeric" placeholder="Введите возраст" class="age-input rounded-full border border-white/15 bg-white/5 px-4 py-3 text-sm normal-case tracking-normal text-white outline-none placeholder:text-white/30"></label></div><div class="mt-8 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-7 sm:flex-row sm:items-end"><label class="flex w-full max-w-xs flex-col gap-3 text-[10px] uppercase tracking-[.16em] text-white/40">Ваш район<select id="district" class="rounded-full border border-white/15 bg-white/5 px-4 py-3 text-sm normal-case tracking-normal text-white outline-none"><option class="bg-[#111111]">Выберите район</option><option class="bg-[#111111]">Волжский</option><option class="bg-[#111111]">Октябрьский</option><option class="bg-[#111111]">Фрунзенский</option><option class="bg-[#111111]">Ленинский</option><option class="bg-[#111111]">Заводской</option><option class="bg-[#111111]">Кировский</option></select></label><button class="pill-button w-full bg-white px-6 py-4 text-sm font-bold text-black transition hover:bg-white/80 sm:w-auto" type="submit">Отправить оценку <span class="ml-4 text-lg">→</span></button></div><p id="formMessage" class="mt-5 text-sm text-white/60"></p></form></div></section>
+
+    <section id="methodology" class="border-t border-white/10 py-24 md:py-32 reveal delay-1"><div class="mx-auto max-w-7xl px-5 md:px-8"><div class="grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><p class="mb-5 text-[10px] uppercase tracking-[.25em] text-white/40">Методология</p><h2 class="text-4xl font-medium tracking-[-.05em] md:text-5xl">Как считаются<br><span class="text-white/40">оценки</span></h2></div><div class="grid gap-3 sm:grid-cols-2"><article class="rounded-3xl border border-white/10 bg-[#111111] p-7"><span class="text-xs text-white/35">01 / Шкала</span><h3 class="mt-8 text-lg font-medium">Оценка от 1 до 5</h3><p class="mt-3 text-sm leading-6 text-white/45">Житель оценивает каждое направление: 1 — очень плохо, 5 — отлично. Ответы собираются отдельно по каждому району.</p></article><article class="rounded-3xl border border-white/10 bg-[#111111] p-7"><span class="text-xs text-white/35">02 / Направления</span><h3 class="mt-8 text-lg font-medium">Средняя оценка</h3><p class="mt-3 text-sm leading-6 text-white/45">Для каждого направления складываются оценки жителей и делятся на количество ответов по нему: S = сумма оценок / число ответов.</p></article><article class="rounded-3xl bg-white p-7 text-black sm:col-span-2"><span class="text-xs text-black/40">03 / Итоговый индекс</span><h3 class="mt-8 text-lg font-medium">Среднее по направлениям</h3><p class="mt-3 max-w-2xl text-sm leading-6 text-black/60">Общий индекс — среднее арифметическое оценок по направлениям для выбранной территории. Показатель рассчитывается по фактическим анкетам, сохранённым в этой версии платформы; демонстрационные значения помечаются отдельно.</p></article></div></div></div></section>
+
+    <section id="analytics" class="border-t border-white/10 bg-[#0e0e0e] py-24 md:py-36 reveal delay-2"><div class="mx-auto max-w-7xl px-5 md:px-8"><div class="mb-14 flex flex-col justify-between gap-7 md:flex-row md:items-end"><div><p class="mb-5 text-[10px] uppercase tracking-[.25em] text-white/40">Открытая аналитика</p><h2 class="text-4xl font-medium tracking-[-.05em] md:text-6xl">Как жители<br><span class="text-white/40">оценивают город</span></h2></div><label class="flex flex-col gap-2 text-[10px] uppercase tracking-[.18em] text-white/40">Район<select id="analyticsDistrict" class="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm normal-case tracking-normal text-white outline-none"><option class="bg-[#111111]" value="Все районы">Все районы</option><option class="bg-[#111111]">Волжский</option><option class="bg-[#111111]">Октябрьский</option><option class="bg-[#111111]">Фрунзенский</option><option class="bg-[#111111]">Ленинский</option><option class="bg-[#111111]">Заводской</option><option class="bg-[#111111]">Кировский</option></select></label></div><div class="mb-6 flex flex-wrap justify-between gap-2 text-xs text-white/40"><span id="filterStatus">Показаны демонстрационные данные</span><span id="dataMode" class="rounded-full border border-white/10 px-3 py-1">Демо-режим</span></div><div class="grid gap-4 lg:grid-cols-[1.4fr_.6fr]"><div class="rounded-3xl border border-white/10 bg-[#111111] p-6 md:p-9"><div class="mb-3 flex items-center justify-between"><h3 class="text-sm font-semibold">Средняя оценка по направлениям</h3></div><div id="bars" class="bars dark-bars"></div></div><div class="flex flex-col items-center justify-center rounded-3xl bg-white p-8 text-center text-black"><span class="text-xs text-black/50">Общий индекс</span><strong id="overallScore" class="mt-5 text-7xl font-medium tracking-[-.08em]">4,1</strong><div class="mt-4 tracking-[.35em] text-black/70">★★★★★</div><p class="mt-4 text-xs text-black/50">на основе <b id="answerCount" class="text-black">0</b> реальных ответов</p><div class="mt-7 rounded-full bg-black/5 px-4 py-2 text-xs text-black/60">Средняя оценка по выбранным направлениям</div></div></div></div></section>
+  </main>
+  <footer class="border-t border-white/10 py-8"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 text-xs text-white/35 md:flex-row md:px-8"><span>© 2026 «Городская среда»</span><span>Исследование качества городской инфраструктуры Саратова</span><a class="text-white/45 transition hover:text-white" href="admin.html">Вход для исследователя</a></div></footer>
+  <script src="app.js"></script>
+  <script src="vendor/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 1000 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.35, random: true, anim: { enable: false } },
+        size: { value: 2, random: true },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.15,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 0.5 } },
+          push: { particles_nb: 3 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>

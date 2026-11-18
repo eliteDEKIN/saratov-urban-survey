@@ -1,0 +1,10 @@
+# Инструмент сборки Tailwind (40 МБ) — сайту не нужен, в git не храним
+tailwindcss-cli.exe
+
+# Старые и неиспользуемые файлы
+style.css
+check-admin-selectors.ps1
+
+# Системный мусор Windows
+Thumbs.db
+desktop.ini
